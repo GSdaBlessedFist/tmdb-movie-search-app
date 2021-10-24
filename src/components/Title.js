@@ -1,4 +1,4 @@
-
+import "../scss/styles.scss";
 
 export default function Title({title}){
 	

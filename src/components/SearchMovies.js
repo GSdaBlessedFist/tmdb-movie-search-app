@@ -5,7 +5,7 @@ export default function SearchMovies() {
 
     const [query, setQuery] = useState('');
     const [movies, setMovies] = useState([]);
-    const apiKey = process.env.REACT_APP_TMDB_KEY;
+    const apiKey = process.env.REACT_APP_TMDB_APIKEY;
 
     const searchMovies = async(e) => {
         e.preventDefault();
@@ -22,7 +22,7 @@ export default function SearchMovies() {
         }
 
     }
-
+    
 	return (
 		<>
 		<form className="form" onSubmit={searchMovies}>
@@ -31,7 +31,7 @@ export default function SearchMovies() {
 			<button className="button" type="submit">Search</button>
 		</form>
 		<div className="card-list">
-			{movies.filter((movie)=>movie.poster_path).map((movie)=>
+		{movies.filter((movie)=>movie.poster_path).map((movie)=>
 			<MovieCard movie={movie} key={movie.id}/>
 			)}
 		</div>
